@@ -1,0 +1,24 @@
+<div class="navbar navbar-default">
+  <div class="container">
+    <div id="navbar-main" class="col-sm-8">
+      <ul class="nav navbar-nav">
+        <li><a href="/">Home</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li ng-hide="navvm.isLoggedIn"><a href="login">Sign in</a></li>
+        <li ng-show="navvm.isLoggedIn"><a href="#" ng-click="logout()">Logout</a></li>
+        <li ng-show="navvm.isLoggedIn"><a href="profile">{{ navvm.currentUser.name }}</a></li>
+        <li ng-show="navvm.isLoggedIn"><a href="contact" target="_blank">Contacts</a></li>
+      </ul>
+      <!-- <ul class="nav nav-pills pull-right">
+        <li role="presentation" class=""><a ui-sref="articles">Home</a></li>
+        <li role="presentation"><a ui-sref="about">About</a></li>
+        <li role="presentation"><a ui-sref="interview" target="_blank">Interview Questions</a></li>
+        <li role="presentation" ng-hide="authenticated"><a ui-sref="signup">Sign Up</a></li>
+        <li role="presentation" ng-hide="authenticated"><a ui-sref="signin">Sign In</a></li>
+        <li role="presentation" ng-show="authenticated"><a ui-sref="#" ng-click="signout()">Sign Out</a></li>
+        <li role="presentation" ng-show="authenticated">Welcome {{current_user}}</li>
+      </ul> -->
+    </div>
+  </div>
+</div>
