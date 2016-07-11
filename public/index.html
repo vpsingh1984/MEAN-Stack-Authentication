@@ -2,10 +2,14 @@
 <html ng-app="meanApp">
 <head>
   <title>MEAN stack authentication example</title>
-  <base href="/">
-  <link rel="stylesheet" href="/lib/bootstrap/css/bootstrap.min.css">
-  <link rel="stylesheet" href="/lib/bootstrap/css/bootstrap-theme.min.css">
-  <!-- <script src="lib/jquery.min.js"></script> -->
+	<link rel="stylesheet" href="/lib/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="/assets/css/custom-style.css">
+	<link rel="stylesheet" type="text/css" href="/assets/css/common-css.css">
+	<link rel="stylesheet" type="text/css" href="/assets/css/nav.css">
+	<link rel="stylesheet" type="text/css" href="/assets/css/font-awesome.min.css">
+
+	<link rel="stylesheet" type="text/css" href="assets/css/ng-tags-input.bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/ng-tags-input.min.css">
 <script src="lib/angular/angular.min.js"></script>
 <script src="lib/angular/angular-route.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-resource.min.js"></script>
@@ -13,7 +17,7 @@
 </head>
 <!-- <body ng-view> -->
 <body>
-
+<!-- <nav id="navbar" class="navbar navbar-default" ng-include="'views/navigation.template.html'"></nav> -->
 <main>
 	<div class="" ui-view></div>
 </main>	
@@ -29,9 +33,11 @@
 <script src="common/directives/navigation/navigation.directive.js"></script>
 
 <!-- Controllers -->
+
 <script src="controllers/login.controller.js"></script>
+<!-- <script src="controllers/navigation.controller.js"></script> -->
 <script src="controllers/register.controller.js"></script>
-<script src="controllers/home.controller.js"></script>
+<script src="controllers/main.controller.js"></script>
 <script src="controllers/profile.controller.js"></script>
 <script src="controllers/contact.controller.js"></script>
 

@@ -67,19 +67,19 @@ angular.module('meanApp', ['ui.router'])
   $stateProvider. 
     state('/', {
       url: '/',
-      templateUrl: 'views/home.view.html',
-      controller: 'homeCtrl',
+      templateUrl: 'views/main.view.html',
+      controller: 'mainCtrl',
       controllerAs: 'vm'
     }).
-    state('register', {
-      url: '/register',
-      templateUrl: 'views/register.view.html',
+    state('signup', {
+      url: '/signup',
+      templateUrl: 'views/signup.view.html',
       controller: 'registerCtrl',
       controllerAs: 'vm'
     }).
-    state('login', {
-      url: '/login',
-      templateUrl: 'views/login.view.html',
+    state('signin', {
+      url: '/signin',
+      templateUrl: 'views/signin.view.html',
       controller: 'loginCtrl'
     }).
     state('profile', {

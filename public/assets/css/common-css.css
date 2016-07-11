@@ -1,0 +1,33 @@
+
+/**********Margins and Paddings*******/
+
+.pd-lft{
+	padding-left: 0px;
+}
+.pd-rgt{
+	padding-right: 0px;
+}
+.pd-lft-rgt{
+	padding-right: 0px;
+	padding-left: 0px;
+}
+.pdtop1{padding-top: 10px;}
+.pdtop2{padding-top: 20px;}
+.pdtop3{padding-top: 30px;}
+
+
+/**********Borders and BgColors*******/
+.bdr-top{
+	border-top: 1px solid #777777;
+}
+
+
+/*Common classes for multiple use*/
+a.question-title-link{
+	font-size: 1.4em;
+    text-decoration: none;
+    display: block;
+}
+/*a.question-title-link:hover{
+	color:#;
+}*/

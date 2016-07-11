@@ -1,0 +1,222 @@
+body {
+  font: 14px/20px Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.category-tiles {
+    margin: 10px 0 0;
+    padding: 1px;
+}
+.category-tiles li {
+    display: inline-block;
+    padding: 0px;
+}
+.category-tiles li a.light-mehroon {
+    background-color: #e9351c;
+}
+.category-tiles li a.skyblue-color {
+    background-color: #3bade9;
+}
+.category-tiles li a.light-green {
+    background-color: #81d60b;
+}
+.category-tiles li a.yellow {
+    background-color: #ffc600;
+}
+.category-tiles li a {
+    display: block;
+    width: 100%;
+    font-size: 18px;
+    color: white;
+    text-align: center;
+    padding: 10px 15px;
+    border: 2px solid white;
+    position: relative;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/*********HOme Page Questions Section***************/
+.all-questions-panel {
+    width: 100%;
+    padding: 10px 15px;
+    border-bottom: 1px solid #eeeeee;
+    border-left: 5px solid #ffc600;
+    margin-bottom: 10px;
+}
+.all-questions-panel:hover{
+    background-color: #ededed;
+    /*cursor: pointer;*/
+}
+.all-questions-panel .options .badge {
+    padding: 5px 7px;
+    margin-right: 5px;
+    border-radius: 0;
+}
+.badge {
+    display: inline-block;
+    min-width: 10px;
+    padding: 3px 7px;
+    font-size: 12px;
+    font-weight: bold;
+    color: white;
+    line-height: 1;
+    vertical-align: middle;
+    white-space: nowrap;
+    text-align: center;
+    background-color: #777777;
+    border-radius: 10px;
+}
+
+.all-questions-panel .options a {
+    margin-right: 10px;
+}
+.all-questions-panel .options a.crud{
+    font-size: 22px;
+}
+.all-questions-panel .options a.crud:first-child{
+    margin-left: 15px;
+}
+
+.popular-question-box{
+    float: left;
+}
+.popular-question-box .user-img {
+    width: 28px;
+    height: 28px;
+    float: left;
+    margin-right: 5px;
+}
+.popular-question-box .user-img img{
+    width: 100%;
+}
+.answer-count{
+    display: block;
+    margin-bottom: 6px;
+    margin-right: 5px;
+    text-align: right;
+    padding-top: 0px;
+    color: #777777;
+}
+.answer-count > .badge{
+    background-color: #337ab7;
+    color: #ffffff;
+}
+.answer-count:hover{
+    text-decoration: none;
+}
+.answer-count:hover > .badge{
+    background-color: #777777;
+    color: #ffffff;
+}
+.view{
+    cursor: default;
+}
+
+/***********Sign in and Sign up page css****************/
+.form-box {
+    margin-top: 35px;
+    box-shadow: 0px 0px 10px #888888;
+}
+.form-top {
+    overflow: hidden;
+    padding: 0 25px 15px 25px;
+    background: #fff;
+    -moz-border-radius: 4px 4px 0 0;
+    -webkit-border-radius: 4px 4px 0 0;
+    border-radius: 4px 4px 0 0;
+    text-align: left;
+}
+.form-top-left {
+    float: left;
+    width: 75%;
+    padding-top: 25px;
+}
+.form-top-left h3 {
+    margin-top: 0;
+}
+.form-top-right {
+    float: left;
+    width: 25%;
+    padding-top: 5px;
+    font-size: 66px;
+    color: #ddd;
+    line-height: 100px;
+    text-align: right;
+}
+.form-bottom {
+    padding: 25px 25px 30px 25px;
+    -moz-border-radius: 0 0 4px 4px;
+    -webkit-border-radius: 0 0 4px 4px;
+    border-radius: 0 0 4px 4px;
+    text-align: left;
+}
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    border: 0;
+}
+.form-bottom form .btn {
+    width: 100%;
+}
+
+/***********Interview Questions Block***************/
+.question-block{
+    margin: 10px 0 0;
+}
+.question-block > label{
+    background: #008094;
+    color: #e4e4e4;
+    display: block;
+    font-size: 1.2em;
+    padding: 10px;
+    border-left: 2px solid #f4f4f4;
+    cursor: pointer;
+}
+.question-block > .angwer-toggle{
+    padding: 10px;
+    text-align: justify;
+    color: #525252;
+    font-size: 1em;
+}
+.question-block > label .fa-plus,
+.question-block > label .fa-minus{
+    
+}
+
+/******Single Post Detail Page Css*********/
+.article-detail-container{
+    
+}
+
+
+/*Tag section on right top side*/
+.tag-section{
+    margin-bottom: 15px;
+}
+
+/*Editor CSS*/
+.ta-scroll-window.form-control{
+    min-height: 200px;
+}
+.ta-scroll-window > .ta-bind{
+    min-height: 200px;
+}
+.post-instructions{
+    border: 1px solid #4e4e4e;
+    background: #;
+    padding: 0 10px;
+
+}
+.post-instructions > ul > li{
+    list-style:devanagari;
+}
+

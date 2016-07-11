@@ -2,9 +2,9 @@
   
   angular
     .module('meanApp')
-    .controller('homeCtrl', homeCtrl);
+    .controller('mainCtrl', mainCtrl);
 
-    function homeCtrl () {
+    function mainCtrl () {
       console.log('Home controller is running');
     }
 
