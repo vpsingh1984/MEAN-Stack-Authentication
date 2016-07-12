@@ -5,7 +5,8 @@
         <li ng-hide="navvm.isLoggedIn"><a ui-sref="signin">Sign in</a></li>
         <li ng-hide="navvm.isLoggedIn"><a ui-sref="signup">Register</a></li>
         <li ng-show="navvm.isLoggedIn"><a href="#" ng-click="logout()">Logout</a></li>
-        <li ng-show="navvm.isLoggedIn"><a ui-sref="profile">{{ navvm.currentUser.name }}</a></li>
+        <li ng-show="navvm.isLoggedIn"><a ui-sref="profile">Profile </a></li>
+        <li><a ui-sref="about">About Us</a></li>
         <li ng-show="navvm.isLoggedIn"><a ui-sref="contact" target="_blank">Contacts</a></li>
       </ul>
   </div>

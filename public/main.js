@@ -82,6 +82,10 @@ angular.module('meanApp', ['ui.router'])
       templateUrl: 'views/signin.view.html',
       controller: 'loginCtrl'
     }).
+    state('about', {
+      url: '/about',
+      templateUrl: 'views/about.html'
+    }).
     state('profile', {
       url: '/profile',
       templateUrl: 'views/profile.view.html',
