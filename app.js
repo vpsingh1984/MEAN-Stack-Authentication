@@ -16,7 +16,7 @@ var passport = require('passport');
 
 // [SH] Bring in the data model
 require('./app_api/models/db');
-require('./app_api/models/posts');
+require('./app_api/models/articles');
 // [SH] Bring in the Passport config after model is defined
 require('./app_api/config/passport');
 

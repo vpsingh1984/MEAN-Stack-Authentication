@@ -2,13 +2,13 @@
 	
   angular
     .module('meanApp')
-    .service('PostService', PostService);
+    .service('ArticleService', ArticleService);
 
-PostService.$inject = ['$http', 'authentication'];
-function PostService ($http, authentication) {
+ArticleService.$inject = ['$http', 'authentication'];
+function ArticleService ($http, authentication) {
 
 	var getAll = function () {
-	  return $http.get('api/posts', {
+	  return $http.get('api/articles', {
 	    headers: {
 	      Authorization: 'Bearer '+ authentication.getToken()
 	    }
@@ -16,12 +16,12 @@ function PostService ($http, authentication) {
 	};
 
  	//Adding Post
- 	var addPost = function (payload) {
+ 	var addArticle = function (payload) {
  		// var payload = {
  		// 	title: title,
  		// 	link: link
  		// }
-	  return $http.post('api/posts', payload, {
+	  return $http.post('api/articles', payload, {
 	    headers: {
 	      Authorization: 'Bearer '+ authentication.getToken()
 	    }
@@ -38,7 +38,7 @@ function PostService ($http, authentication) {
 
 	return {
 	  getAll : getAll,
-	  addPost: addPost
+	  addArticle: addArticle
 	};
 
 

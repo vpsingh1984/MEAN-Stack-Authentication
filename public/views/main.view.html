@@ -5,62 +5,31 @@
 	<div class="page-header">
 		<h1>Flapper News</h1>
 	</div>
-    <div class="row" ng-repeat="post in vm.posts">
+    <div class="row" ng-repeat="article in vm.articles">
 
       	<div class="col-sm-1">
-      		<a href="#" ng-click="incrementUpvotes(post)">
+      		<a href="#" ng-click="incrementUpvotes(article)">
 				<span class="glyphicon glyphicon-thumbs-up"></span>
 			</a>
-            {{post.upvotes}}
+            {{article.upvotes}}
       	</div>
       	<div class="col-sm-3">
-      		<a ng-show="post.link" href="{{post.link}}">
-              {{post.title}}
+      		<a ng-show="article.link" href="{{article.link}}">
+              {{article.title}}
             </a>
-            <span ng-hide="post.link">
-              {{post.title}}
+            <span ng-hide="article.link">
+              {{article.title}}
             </span>
       	</div>
       	<div class="col-sm-2">
       		<span>
-               <a href="#/posts/{{post._id}}">Comments</a>
+               <a href="#/articles/{{article._id}}">Comments</a>
             </span>
       	</div>
     </div>  
 
-
-<!--         <div ng-repeat="post in vm.posts">
-          <a href="#" ng-click="incrementUpvotes(post)">
-          <span class="glyphicon glyphicon-thumbs-up"></span>
-          </a>
-          {{post.upvotes}}
-          <span style="font-size:20px; margin-left:10px;">
-            <a ng-show="post.link" href="{{post.link}}">
-              {{post.title}}
-            </a>
-            <span ng-hide="post.link">
-              {{post.title}}
-            </span>
-            <span>
-              <a href="#/posts/{{post._id}}">Comments</a>
-            </span>
-          </span>
-        </div>
- -->
-        <!-- <form ng-submit="addPost()"
-          style="margin-top:30px;">
-          <h3>Add a new post</h3>
-
-          <div class="form-group">
-            <input type="text" class="form-control" placeholder="Title" ng-model="title"></input>
-          </div>
-          <div class="form-group">
-            <input type="text" class="form-control" placeholder="Link" ng-model="link"></input>
-          </div>
-          <button type="submit" class="btn btn-primary">Post</button>
-        </form> -->
         <h1>Articles</h1>
-        <form  ng-submit="vm.addPost()" style="margin-top:30px;">
+        <form  ng-submit="vm.postArticle()" style="margin-top:30px;">
           <div class="form-group">
             <input class="form-control" required type="text" placeholder="Title" ng-model="vm.title" />
           </div>

@@ -1,0 +1,18 @@
+<h1>html Questions and Answers</h1>
+
+<!-- <result-list results="vm.results"> </result-list> -->
+
+
+<div class="col-sm-12">
+	<div class="row">
+		<section class="question-block" ng-repeat="record in records">
+			<label><strong>Q: </strong> {{record.question}} 
+				<i class="fa fa-plus pull-right"></i>
+				<i class="fa fa-minus pull-right"></i>
+			</label>
+			<div class="angwer-toggle">
+				A: {{record.answer}}
+			</div>
+		</section>
+	</div>
+</div>

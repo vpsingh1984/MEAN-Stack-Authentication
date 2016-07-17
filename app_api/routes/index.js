@@ -6,10 +6,10 @@ var auth = jwt({
   userProperty: 'payload'
 });
 
-var ctrlProfile = require('../controllers/profile');
-var ctrlAuth = require('../controllers/authentication');
-var addPostCtrl = require('../controllers/addPost');
-var getAllPostCtrl = require('../controllers/getAllPost');
+var ctrlProfile = require('../controllers/profile');		//profile page
+var ctrlAuth = require('../controllers/authentication');	//Authentication 
+var addArticleCtrl = require('../controllers/addArticle');		//Adding post 
+var getAllArticleCtrl = require('../controllers/getAllArticles');	//Fetching all posts
 
 // profile
 router.get('/profile', auth, ctrlProfile.profileRead);
@@ -19,8 +19,8 @@ router.get('/profile', auth, ctrlProfile.profileRead);
 router.post('/register', ctrlAuth.register);
 router.post('/login', ctrlAuth.login);
 
-router.post('/posts', addPostCtrl.addPost);
-router.get('/posts', getAllPostCtrl.getAllPost);
+router.post('/articles', addArticleCtrl.addArticle);
+router.get('/articles', getAllArticleCtrl.getAllArticles);
 
 
 

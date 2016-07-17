@@ -14,15 +14,7 @@ var CommentSchema = new mongoose.Schema({
 });
 
 
-
-// var PostSchema = new mongoose.Schema({
-//   title: String,
-//   link: String,
-//   upvotes: {type: Number, default: 0},
-//   comments: [CommentSchema]
-//   //comments: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Comment' }]
-// });
-var PostSchema = new mongoose.Schema({
+var ArticleSchema = new mongoose.Schema({
   username: String,
   title: String,
   text: String,
@@ -32,10 +24,10 @@ var PostSchema = new mongoose.Schema({
   comments: [CommentSchema]
 });
 
-PostSchema.methods.upvote = function(cb) {
+ArticleSchema.methods.upvote = function(cb) {
   this.upvotes += 1;
   this.save(cb);
 };
 
-mongoose.model('Post', PostSchema);
+mongoose.model('Article', ArticleSchema);
 mongoose.model('Comment', CommentSchema);

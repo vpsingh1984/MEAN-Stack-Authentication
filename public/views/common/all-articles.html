@@ -1,0 +1,38 @@
+<h3 class="page-header">All Questions</h3>
+		
+<section class="all-questions-panel" ng-repeat="article in articles.slice(((currentPage-1)*itemsPerPage), ((currentPage)*itemsPerPage)) | orderBy: 'timestamp':true">
+	<div class="row">
+		<div class="col-sm-10">
+			<a ui-sref="articles/({article: article._id})" class="text-primary question-title-link">{{article.title}}</a>
+			<p>{{article.text}}</p>
+			<div class="row options">
+			<div class="col-sm-6">
+				<!-- <span class="views">  --> 
+					<a class="label label-success" ng-repeat="tags in article.tags">{{tags.text}}</a>
+				<!-- </span> -->
+			</div>
+			<div class="col-md-6 text-right">
+				<span class="views text-success">By: </span>
+				<a href="#" class="text-primary">
+					<span ng-show="article.username">
+					  {{article.username}}
+					</span>
+				</a>
+				<span class="text-muted">at : {{article.timestamp | date :"h:mma 'on' MMM d, y"}}</span>
+			</div>
+		</div>
+		</div>
+		<div class="col-sm-2 pd-lft-rgt">
+			<a href="#" class="answer-count">Answers <span class="badge">452</span></a>
+			<a href="#" class="answer-count view">Views <span class="badge">1654</span></a>
+			<!-- <a href="#" class="crud" ng-click="edit(article)" ng-show="isUserOwner(article)">
+				<i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+			</a>
+			<a href="#" class="crud" ng-click="del(article)" ng-show="isUserOwner(article)">
+				<i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+			</a> -->
+		</div>
+	</div>
+	
+</section>
+<pagination total-items="totalItems" ng-model="currentPage" ng-change="pageChanged()" class="pagination-sm" items-per-page="itemsPerPage"></pagination>

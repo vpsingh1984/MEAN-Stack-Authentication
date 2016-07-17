@@ -1,0 +1,75 @@
+<section class="container" ng-include="'views/common/sub-links.html'"></section>
+<section class="container pdtop2">
+	<!-- All Articles Section -->
+	<h2>{{article.title}}</h2>
+	<section class="col-lg-8 col-md-8 bdr-top pd-lft-rgt pdtop1">
+
+		<div class="row">
+			<div class="col-md-12 text-right">
+				<a href="#">Answers <span class="badge">452</span></a>
+				<span class="views">Views <span class="badge">1654</span></span>
+				<span ng-click="incrementUpvotes(article)">
+		            <span class="glyphicon glyphicon-thumbs-up"></span>
+		        </span>
+		        <span>{{article.upvotes}}</span>
+				<!-- <a href="#" class="crud" ng-click="edit(article)" ng-show="isUserOwner(article)">
+					<i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+				</a>
+				<a href="#" class="crud" ng-click="del(article)" ng-show="isUserOwner(article)">
+					<i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+				</a> -->
+			</div>
+			<!-- <div class="col-md-6">
+				<span class="views text-success">Posted By: </span>
+				<a href="#" class="text-primary">{{article.username}}</a>
+				<span class="text-muted">at : {{article.timestamp | date :"h:mma 'on' MMM d, y"}}</span>
+			</div> -->
+		</div>
+		<article class="article-detail-container pdtop2">
+			<div class="row">
+				<div class="col-sm-12">
+					<pre id="articleDescription">{{article.text || 'no description'}}</pre>
+				</div>
+			</div>
+		</article>
+<!-- Comments display Container -->
+		<div ng-repeat="comment in article.comments">
+			<span class="glyphicon glyphicon-thumbs-up" ng-click="incrementCommentUpvotes(comment)"></span>
+			{{comment.upvotes}} - by {{comment.username}}
+			<span style="font-size:20px; margin-left:10px;">{{comment.commentText}}</span>
+		</div>
+
+	</section>
+	<section class="col-lg-4 col-md-4">
+	<!-- TOPIC TAGS ON RIGHT TOP SIDE -->
+		<!-- <div class="col-sm-12 tag-section" ng-include="'views/common/tag-section.html'">
+			
+		</div> -->
+	<!-- Popular questions on right side -->
+		<!-- <div class="col-sm-12 popular-question" ng-include="'views/common/popular-questions.html'">
+			
+		</div> -->
+	</section>
+	<!-- Comment Section -->
+	<div class="row">
+		<div class="col-sm-8">
+			<h2>Post Comments</h2>
+			<!-- <form>
+				<div class="form-group">
+					<text-angular name="textBox" ng-model="article.comments" required></text-angular>
+				</div>
+				<button class="btn btn-default" ng-click="addComment()" ng-hide="editMode">Post</button>
+			</form> -->
+			<form ng-submit="addComment()" ng-show="isLoggedIn()" style="margin-top:30px;">
+			  <h3>Add a new comment</h3>
+			  <div class="form-group">
+			    <input type="text" class="form-control" placeholder="Comment" ng-model="commentText"></input>
+			  </div>
+			  <button type="submit" class="btn btn-primary">Post</button>
+			</form>
+			<div ng-hide="isLoggedIn()">
+			  <h3>You need to <a href="signin">Log In</a> or <a href="signup">Register</a> before you can comment.</h3>
+			</div>
+		</div>
+	</div>
+</section>

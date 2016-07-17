@@ -1,0 +1,29 @@
+<!-- <ul class="nav nav-pills">
+	  <li role="presentation" class=""><a ng-click="loadHtml()" ui-sref="interview.htmlpage">Html Questions</a></li>
+	  <li role="presentation"><a ng-click="loadCss()" ui-sref="interview.csspage">CSS Questions</a></li>
+</ul> -->
+
+<section class="col-lg-2 col-md-2 col-sm-3">
+	<h3>Questions Topic</h3>
+	<ul class="nav nav-pills nav-stacked"> 
+		<li role="presentation"><a ng-click="getinterviewContent('html')" ui-sref="interview.htmlpage">Html Questions</a></li> 
+		<li role="presentation"><a ng-click="getinterviewContent('css')" ui-sref="interview.csspage">CSS Questions</a></li> 
+</section>
+
+<section class="col-lg-7 col-md-7 col-sm-6">
+	<h2>PLease select the topic of questions </h2>
+	<div ui-view></div>
+</section>
+
+<section class="col-lg-3 col-md-3 col-sm-3">
+	<div class="row">
+	<!-- TOPIC TAGS ON RIGHT TOP SIDE -->
+		<div class="col-sm-12 tag-section pd-lft-rgt" ng-include="'views/common/tag-section.html'">
+			
+		</div>
+	<!-- Popular questions on right side -->
+		<div class="col-sm-12 popular-question pd-lft-rgt" ng-include="'views/common/popular-questions.html'">
+			
+		</div>
+	</div>
+</section>

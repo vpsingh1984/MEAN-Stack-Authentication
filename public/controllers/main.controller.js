@@ -3,19 +3,19 @@ angular
 .module('meanApp')
 .controller('mainCtrl', mainCtrl);
 
-function mainCtrl ($scope, PostService, authentication) {
+function mainCtrl ($scope, ArticleService, authentication) {
 	var vm = this;
-	vm.posts = [];
+	vm.articles = [];
 
 	//vm.isLoggedIn = authentication.isLoggedIn();
 
     vm.currentUser = authentication.currentUser();
 
-	PostService.getAll().then(function(response){
-		vm.posts = response.data;
+	ArticleService.getAll().then(function(response){
+		vm.articles = response.data;
 	});
 
-	vm.addPost = function(){
+	vm.postArticle = function(){
 	var payload = {
 		username: vm.currentUser.name,
 	    title: vm.title,
@@ -23,10 +23,10 @@ function mainCtrl ($scope, PostService, authentication) {
 	    tags: vm.tags
 	  }
 	  if(!vm.title || vm.title === '') { return; }
-	  PostService.addPost(payload).then(function(response){
+	  ArticleService.addArticle(payload).then(function(response){
 	  	console.log(response);
 	  	if (response.status == '200') {
-	  		vm.posts.push(response.data);
+	  		vm.articles.push(response.data);
 	  	}
 	  });
 	  vm.title = '';
@@ -34,8 +34,8 @@ function mainCtrl ($scope, PostService, authentication) {
 	  vm.tags = '';
 	};
 
-	$scope.incrementUpvotes = function(post) {
-	  PostService.upvote(post);
+	$scope.incrementUpvotes = function(article) {
+	  ArticleService.upvote(article);
 	};
 
 }  
