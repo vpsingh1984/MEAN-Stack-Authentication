@@ -18,57 +18,5 @@ angular
           $location.path('/');
         });
     }
-    // articleService.save($scope.article, function(response){
-    //   if (response.status == 'Authentication Failure')
-    //     $location.path('/signin');
-
-    //   $scope.articles = articleService.query();
-    //   $scope.article  = {username: '', title: '', text: '', timestamp: '',tags:''};
-    // });
 
   }]);
-
-
-
-
-
-
-
-
-
-
-
-
-
-// (function () {
-
-//   angular
-//   .module('meanApp')
-//   .controller('loginCtrl', loginCtrl);
-
-//   loginCtrl.$inject = ['$location', 'authentication'];
-//   function loginCtrl($scope, $location, authentication) {
-//     var vm = this;
-
-    
-//     vm.onSubmit = function () {
-//       if (authentication.isLoggedIn()) {
-//         $location.path('profile');
-//       }else{
-//         authentication
-//         .login(vm.credentials)
-//         .error(function(err){
-//           alert(err);
-//         })
-//         .then(function(){
-//           $location.path('profile');
-//         });
-//       }
-      
-//     };
-
-    
-
-//   }
-
-// })();

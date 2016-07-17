@@ -7,12 +7,19 @@ function mainCtrl ($scope, ArticleService, authentication) {
 	var vm = this;
 	vm.articles = [];
 
-	//vm.isLoggedIn = authentication.isLoggedIn();
+	vm.isLoggedIn = authentication.isLoggedIn();
 
     vm.currentUser = authentication.currentUser();
 
 	ArticleService.getAll().then(function(response){
 		vm.articles = response.data;
+
+		vm.viewby = 10;
+		vm.totalItems = vm.articles.length;
+		console.log(vm.totalItems + " ***************");
+		vm.currentPage = 1;
+		vm.itemsPerPage = vm.viewby;
+		vm.maxSize = 10; //Number of pager buttons to show
 	});
 
 	vm.postArticle = function(){

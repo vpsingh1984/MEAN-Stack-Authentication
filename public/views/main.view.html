@@ -1,53 +1,22 @@
 <navigation></navigation>
 
-<div class="container">
-  
-	<div class="page-header">
-		<h1>Flapper News</h1>
-	</div>
-    <div class="row" ng-repeat="article in vm.articles">
+<section ng-include="'views/common/sub-links.html'"></section>
+<section class="container">
+  <!-- All Articles Section -->
+  <section class="col-lg-8 col-md-8" ng-include="'views/common/all-articles.html'">
 
-      	<div class="col-sm-1">
-      		<a href="#" ng-click="incrementUpvotes(article)">
-				<span class="glyphicon glyphicon-thumbs-up"></span>
-			</a>
-            {{article.upvotes}}
-      	</div>
-      	<div class="col-sm-3">
-      		<a ng-show="article.link" href="{{article.link}}">
-              {{article.title}}
-            </a>
-            <span ng-hide="article.link">
-              {{article.title}}
-            </span>
-      	</div>
-      	<div class="col-sm-2">
-      		<span>
-               <a href="#/articles/{{article._id}}">Comments</a>
-            </span>
-      	</div>
-    </div>  
+  </section>
+  <section class="col-lg-4 col-md-4">
+  <!-- TOPIC TAGS ON RIGHT TOP SIDE -->
+    <div class="col-sm-12 tag-section" ng-include="'views/common/tag-section.html'">
+      
+    </div>
+  <!-- Popular questions on right side -->
+    <div class="col-sm-12 popular-question" ng-include="'views/common/popular-questions.html'">
+      
+    </div>
+    
+  </section>
+</section>
 
-        <h1>Articles</h1>
-        <form  ng-submit="vm.postArticle()" style="margin-top:30px;">
-          <div class="form-group">
-            <input class="form-control" required type="text" placeholder="Title" ng-model="vm.title" />
-          </div>
-          
-          <div class="form-group">
-            <textarea class="form-control" required maxlength="400" rows="3" placeholder="Description" ng-model="vm.text"></textarea>
-            <!-- <text-angular name="textBox" ng-model="vm.text" required></text-angular> -->
-          </div>
-          <div class="form-group">
-            <!-- <input class="form-control" required type="text" placeholder="Tags" data-role="tagsinput" ng-model="vm.tags" /> -->
-            <tags-input ng-model="vm.tags"></tags-input>
-          </div>
-          <button type="submit" class="btn btn-primary">Post</button>
-          <!-- <button class="btn btn-default" ng-click="update()" ng-show="editMode">Update</button> -->
-        </form>
-       <!--  <div ng-hide="vm.isLoggedIn()">
-          <h3>You need to <a href="signin">Log In</a> or <a href="signup">Register</a> before you can comment.</h3>
-        </div> -->
-
-  
-</div>
+<div ng-View></div>

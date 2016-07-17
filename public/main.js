@@ -1,4 +1,9 @@
-angular.module('meanApp', ['ui.router', 'ngTagsInput',])
+angular.module('meanApp', [
+  'ui.router', 
+  'ngTagsInput',
+  'ui.bootstrap',
+  'textAngular'
+])
 
 .config(function($stateProvider, $urlRouterProvider, $locationProvider){
   $stateProvider. 
@@ -34,8 +39,16 @@ angular.module('meanApp', ['ui.router', 'ngTagsInput',])
       templateUrl: 'views/contact.view.html',
       controller: 'contactCtrl',
       controllerAs: 'vm'
+    }).
+    state('askquestion', {
+      url: '/askquestion',
+      templateUrl: 'views/questions/ask-question.html',
+      controller: 'mainCtrl',
+      controllerAs: 'vm'
     });
+
     $urlRouterProvider.otherwise('/');
+
 }).run(function($http, $location, $rootScope, authentication){
     $rootScope.$on('$routeChangeStart', function(event, nextRoute, currentRoute) {
       if ($location.path() === '/profile' && !authentication.isLoggedIn()) {

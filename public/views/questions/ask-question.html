@@ -1,40 +1,31 @@
+<navigation></navigation>
 <section class="container" ng-include="'views/common/sub-links.html'"></section>
 
 <div class="container">
 	<div class="col-sm-8">
 		<h1>Articles</h1>
-		<form ng-show="isLoggedIn()">
+		<form ng-show="vm.isLoggedIn" ng-submit="vm.postArticle()">
 			<div class="form-group">
-				<input class="form-control" required type="text" placeholder="Title" ng-model="article.title" />
+				<input class="form-control" required type="text" placeholder="Title" ng-model="vm.title" />
 			</div>
 			<!-- <textarea class="form-control" required maxlength="400" rows="3" placeholder="Description" ng-model="article.text"></textarea> -->
 			<div class="form-group">
 				<!-- <textarea ui-tinymce="tinymceOptions" ng-model="article.text"></textarea>  -->
-				<text-angular name="textBox" ng-model="article.text" required></text-angular>
+				<text-angular name="textBox" ng-model="vm.text" required></text-angular>
 			</div>
 			<div class="form-group">
 				<!-- <input class="form-control" required type="text" placeholder="Tags" data-role="tagsinput" ng-model="article.tags" /> -->
-				<tags-input ng-model="article.tags"></tags-input>
+				<tags-input ng-model="vm.tags"></tags-input>
 			</div>
-			<button class="btn btn-default" ng-click="postArticle()" ng-hide="editMode">Post</button>
+			<button type="submit" class="btn btn-default">Post</button>
 			<!-- <button class="btn btn-default" ng-click="update()" ng-show="editMode">Update</button> -->
 		</form>
-		<div ng-hide="isLoggedIn()">
+		<div ng-hide="vm.isLoggedIn">
 			<h3>You need to <a href="signin">Log In</a> or <a href="signup">Register</a> before you can comment.</h3>
 		</div>
-	</div><!-- 
-	<div id="articles-posted" class="col-sm-6">
-		<h2>Articles Posted</h2>
-		<div ng-repeat="article in articles | orderBy: 'timestamp':true">
-			<h3>{{article.title}}</h3>
-			<p>{{article.text}}</p>
-			<p><small>Posted By: {{article.username}}</small> at {{article.timestamp | date :"h:mma 'on' MMM d, y"}}</p>
-			<button type="submit" class="btn btn-default" ng-click="edit(article)" ng-show="isUserOwner(article)">Edit</button>
-			<button type="submit" class="btn btn-default" ng-click="del(article)" ng-show="isUserOwner(article)">Delete</button>
-		</div>
 	</div>
-	 -->
-	<div class="col-sm-4" style="display: none;">
+
+	<div class="col-sm-4" style="display: ;">
 		<!-- TOPIC TAGS ON RIGHT TOP SIDE -->
 		<div class="col-sm-12 tag-section" ng-include="'views/common/tag-section.html'">
 			
@@ -52,6 +43,6 @@
 					</ul>
 				</div>
 			</div>
-		</div
->	</div>
+		</div>	
+	</div>
 </div>

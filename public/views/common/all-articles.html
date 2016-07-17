@@ -1,6 +1,6 @@
 <h3 class="page-header">All Questions</h3>
 		
-<section class="all-questions-panel" ng-repeat="article in articles.slice(((currentPage-1)*itemsPerPage), ((currentPage)*itemsPerPage)) | orderBy: 'timestamp':true">
+<section class="all-questions-panel" ng-repeat="article in vm.articles.slice(((vm.currentPage-1)*vm.itemsPerPage), ((vm.currentPage)*vm.itemsPerPage)) | orderBy: 'timestamp':true">
 	<div class="row">
 		<div class="col-sm-10">
 			<a ui-sref="articles/({article: article._id})" class="text-primary question-title-link">{{article.title}}</a>
