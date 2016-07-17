@@ -15,7 +15,7 @@ angular
           console.log(err);
         })
         .then(function(){
-          $location.path('/profile');
+          $location.path('/');
         });
     }
     // articleService.save($scope.article, function(response){

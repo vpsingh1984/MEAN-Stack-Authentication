@@ -1,19 +1,35 @@
 var mongoose = require('mongoose');
+
+var tagSchema = mongoose.Schema({
+    tags: { type: String, select: true },
+    text: String,
+    timestamp: {type: Date, default: Date.now}
+});
+
 var CommentSchema = new mongoose.Schema({
-  body: String,
-  author: String,
+  username: String,
+  commentText: String,
   upvotes: {type: Number, default: 0},
-  post: { type: mongoose.Schema.Types.ObjectId, ref: 'Post' }
+  article: { type: mongoose.Schema.Types.ObjectId, ref: 'Article' }
 });
 
 
 
+// var PostSchema = new mongoose.Schema({
+//   title: String,
+//   link: String,
+//   upvotes: {type: Number, default: 0},
+//   comments: [CommentSchema]
+//   //comments: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Comment' }]
+// });
 var PostSchema = new mongoose.Schema({
+  username: String,
   title: String,
-  link: String,
+  text: String,
+  timestamp: {type: Date, default: Date.now},
   upvotes: {type: Number, default: 0},
+  tags: [tagSchema],
   comments: [CommentSchema]
-  //comments: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Comment' }]
 });
 
 PostSchema.methods.upvote = function(cb) {
